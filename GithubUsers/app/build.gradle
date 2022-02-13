@@ -24,9 +24,6 @@ android {
         consumerProguardFiles "consumer-rules.pro"
         buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
         buildConfigField "String", "HOST_NAME", "\"api.github.com\""
-        buildConfigField "String", "CERTIFICATE_PIN_1", "\"sha256/azE5Ew0LGsMgkYqiDpYay0olLAS8cxxNGUZ8OJU756k=\""
-        buildConfigField "String", "CERTIFICATE_PIN_2", "\"sha256/vnCogm4QYze/Bc9r88xdA6NTQY74p4BAz2w5gxkLG2M=\""
-        buildConfigField "String", "CERTIFICATE_PIN_3", "\"sha256/WoiWRyIOVNa9ihaBciRSC7XHjliYS9VwUGOIud4PB18=\""
         buildConfigField "String", "PASSPHRASE", "\"githubUsers\""
     }
 
@@ -43,29 +40,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-//    buildTypes {
-//        release {
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//
-//        debug {
-//            minifyEnabled true
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
-//    }
     buildFeatures {
         viewBinding true
     }
 }
 
 dependencies {
-
-//    implementation 'androidx.core:core-ktx:1.7.0'
-//    implementation 'androidx.appcompat:appcompat:1.4.1'
-//    implementation 'com.google.android.material:material:1.5.0'
-//    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-//    testImplementation 'junit:junit:4.13.2'
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

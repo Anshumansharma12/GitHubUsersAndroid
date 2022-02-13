@@ -4,7 +4,7 @@
     <string name="follower_title">Followers</string>
     <string name="following_title">Following</string>
     <string name="username">username</string>
-    <string name="follower">Follower</string>
+    <string name="followers">Followers</string>
     <string name="following">Following</string>
     <string name="repositories">Repositories</string>
     <string name="no_data_available">No Data Available</string>

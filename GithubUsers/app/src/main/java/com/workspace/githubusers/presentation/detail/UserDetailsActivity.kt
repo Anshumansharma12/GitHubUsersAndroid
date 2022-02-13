@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.workspace.githubusers.R
 import com.workspace.githubusers.databinding.ActivityUserDetailBinding
 import com.workspace.githubusers.domain.model.UserDetail
-import com.workspace.githubusers.utils.state.LoaderState
+import com.workspace.githubusers.utils.DataMapper
 import com.workspace.githubusers.utils.viewUtils.load
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -84,7 +84,7 @@ class UserDetailsActivity : AppCompatActivity() {
             txtFollower.text = data.followers.toString()
             txtFollowing.text = data.following.toString()
             txtCompany.text = data.company ?: getString(R.string.no_company)
-            txtCreatedOn.text = data.createdAt.toString()
+            txtCreatedOn.text = DataMapper.getFormatDateAndTime(data.createdAt.toString())
             ivUser.load(data.avatarUrl)
         }
 

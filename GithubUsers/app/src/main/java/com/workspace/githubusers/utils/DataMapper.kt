@@ -6,6 +6,8 @@ import com.workspace.githubusers.data.local.entity.UserDetailEntity
 import com.workspace.githubusers.data.local.entity.UserEntity
 import com.workspace.githubusers.domain.model.User
 import com.workspace.githubusers.domain.model.UserDetail
+import java.text.ParseException
+import java.text.SimpleDateFormat
 
 /**
  * Created by Anshuman Sharma on 09/02/22.
@@ -66,6 +68,20 @@ object DataMapper {
             createdAt = data.createdAt,
             login = data.login
         )
+
+    fun getFormatDateAndTime(mDateTime: String): String {
+        var mDateTimeOut = mDateTime
+        try {
+            val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+            val formatter = SimpleDateFormat("'Date : 'dd-MM-yyyy\n'Time : 'KK:mm a")
+            mDateTimeOut = formatter.format(parser.parse(mDateTimeOut))
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return mDateTimeOut
+    }
 
 
 }
