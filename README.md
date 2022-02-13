@@ -2,9 +2,6 @@
 This is GitHub Users List Project. Getting list of all GitHub users with pagination and details. Room DB for string data in offline mode.
 This project implements MVVM with a clean architecture approach applying some of the best practices in Android Development.
 
-## Screen Capture
-<img src="https://github.com/zedlabs/WallPortal/blob/master/screenshots/new.png" width="200" height="400">    <img src="https://github.com/zedlabs/WallPortal/blob/master/screenshots/pop.png" width="200" height="400"> <img src="https://github.com/zedlabs/WallPortal/blob/master/screenshots/detCol.png" width="200" height="400">
-
 ## Techs/Libraries
 - [Kotlin](https://developer.android.com/kotlin)
 - [Kotlin Flow](https://developer.android.com/kotlin/flow)
