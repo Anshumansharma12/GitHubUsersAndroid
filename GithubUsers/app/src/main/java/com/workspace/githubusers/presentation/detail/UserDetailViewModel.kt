@@ -26,16 +26,6 @@ class UserDetailViewModel @ViewModelInject constructor(
         get() = _state
 
     /**
-     * error
-     */
-    private val _error = MutableLiveData<String>()
-
-    /**
-     * Network error
-     */
-    private val _networkError = MutableLiveData<Boolean>()
-
-    /**
      * User detail remote
      */
     private val _resultUserDetail = MutableLiveData<UserDetail>()
@@ -65,29 +55,7 @@ class UserDetailViewModel @ViewModelInject constructor(
             userUseCase.getUserDetail(username).collect {
                 _state.value = LoaderState.HideLoading
                 _resultUserDetail.postValue(it)
-//                when (it) {
-//                    is ResultState.Success -> _resultUserDetail.postValue(it.data)
-//                    is ResultState.Error -> _error.postValue(it.error)
-//                    is ResultState.NetworkError -> _networkError.postValue(true)
-//                }
             }
-
         }
     }
-
-    /**
-     * Local
-     */
-//    fun addUserToDB(userFavoriteEntity: UserFavorite) {
-//        viewModelScope.launch {
-//            try {
-//                userUseCase.addUserToFavDB(userFavoriteEntity)
-//                _resultInsertUserToDb.postValue(true)
-//            }catch (e: Exception) {
-//                _error.postValue(e.localizedMessage)
-//            }
-//        }
-//    }
-//
-//    fun getFavUserByUsername(username: String) = userUseCase.getFavUserByUsername(username).asLiveData()
 }

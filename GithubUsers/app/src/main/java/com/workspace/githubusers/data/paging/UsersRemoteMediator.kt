@@ -10,6 +10,8 @@ import com.workspace.githubusers.data.local.entity.RemoteKeysEntity
 import com.workspace.githubusers.data.local.entity.UserEntity
 import com.workspace.githubusers.data.remote.NetworkService
 import com.workspace.githubusers.utils.DataMapper
+import com.workspace.githubusers.utils.const
+import com.workspace.githubusers.utils.isConnectedNetwork
 import okio.IOException
 import retrofit2.HttpException
 
@@ -44,7 +46,11 @@ class UsersRemoteMediator(
         }
 
         try {
+            if (!const.mContext.isConnectedNetwork()) {
+                return MediatorResult.Success(endOfPaginationReached = true)
+            }
             val response = networkService.getUser(since = page, perPage = state.config.pageSize)
+
             val isEndOfList = response.isEmpty()
             mAppDB.withTransaction {
                 if (loadType == LoadType.REFRESH) {

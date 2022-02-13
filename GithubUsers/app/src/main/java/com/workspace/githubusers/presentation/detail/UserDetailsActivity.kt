@@ -67,44 +67,14 @@ class UserDetailsActivity : AppCompatActivity() {
     private fun initObserver() {
         with(userDetailViewModel) {
             state.observe(this@UserDetailsActivity) {
-                handleStateLoading(it)
+//                handleStateLoading(it)
             }
             resultUserDetail.observe(this@UserDetailsActivity) {
                 handleResultUserDetail(it)
             }
-//            username?.let {
-//                getFavUserByUsername(it).observe(this@UserDetailsActivity, {
-//                    handleUserDetailFromDb(it)
-//                })
-//            }
-//            resultInsertUserDb.observe(this@UserDetailsActivity, { it ->
-//                if (it) {
-//                    username?.let {
-//                        userDetailViewModel.getFavUserByUsername(it)
-//                    }
-//                    toast(getString(R.string.user_success))
-//                }
-//            })
-//            resultDeleteFromDb.observe(this@UserDetailActivity, { it ->
-//                if (it) {
-//                    username?.let {
-//                        userDetailViewModel.getFavUserByUsername(it)
-//                    }
-//                    toast(getString(R.string.user_deleted))
-//                }
-//            })
         }
 
     }
-
-    private fun handleStateLoading(loading: LoaderState) {
-        if (loading is LoaderState.ShowLoading) {
-//            binding.favButton.setGone()
-        } else {
-//            binding.favButton.setVisible()
-        }
-    }
-
 
     private fun handleResultUserDetail(data: UserDetail) {
         userDetail = data

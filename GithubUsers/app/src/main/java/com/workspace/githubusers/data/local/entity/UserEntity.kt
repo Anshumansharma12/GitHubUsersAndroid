@@ -17,7 +17,4 @@ data class UserEntity(
 
     @ColumnInfo(name = "login")
     val login: String?
-//
-//    @ColumnInfo(name = "page")
-//    val page: Int = 0,
 )
